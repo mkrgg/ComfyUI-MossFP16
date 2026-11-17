@@ -3,9 +3,16 @@
 A single loader node for MOSS-Image checkpoints on GPUs without bf16 (Turing:
 RTX 20xx, GTX 16xx, Quadro RTX, Tesla T4).
 
+HF repo: https://huggingface.co/mkrgg/MOSS-Image-Base-INT8-FP16-Turing
+
 This node was tested on ComfyUI 0.45.0 with:
 - triton 3.2.0 (--enable-triton-backend)
 - pytorch version: 2.9.1+cu130
+
+At 2MP on a RTX 2060 SUPER:
+- moss_image_base_int8_convrot: 6.64s/it
+- moss_image_base_int8_fp16: 4.78s/it
+- moss_image_base_int8_convrot + node (*): 4.80s/it
 
 `MOSSImage` declares `supported_inference_dtypes = [bfloat16, float32]`. Without
 bf16, ComfyUI stores the weights in bf16 and runs the whole residual stream
