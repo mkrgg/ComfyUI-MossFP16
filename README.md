@@ -11,8 +11,10 @@ This node was tested on ComfyUI 0.45.0 with:
 
 At 2MP on a RTX 2060 SUPER:
 - moss_image_base_int8_convrot: 6.64s/it
-- moss_image_base_int8_fp16: 4.78s/it
-- moss_image_base_int8_convrot + node (*): 4.80s/it
+- moss_image_base_int8_fp16: **4.78s/it**
+- moss_image_base_int8_convrot + node **(*)**: 4.80s/it
+
+**(*)** You can use the base int8 with the node and see the same speed boost, however if you are using loras at high mp your output is gonna be with artifacts or some visual bug due to the clamp. There's more information about this in the hf repo.
 
 `MOSSImage` declares `supported_inference_dtypes = [bfloat16, float32]`. Without
 bf16, ComfyUI stores the weights in bf16 and runs the whole residual stream
