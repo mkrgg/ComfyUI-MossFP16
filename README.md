@@ -35,3 +35,7 @@ the checkpoint, e.g. `moss_image_heal_int8_fp16.safetensors`.
 For reloads under memory pressure the node registers its own
 `cached_patcher_init`, so the fp16 dtype list is applied again instead of
 falling back to the core loader.
+
+## AI
+
+The custom node and the README was created using Inklink 2 Small.
