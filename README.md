@@ -27,6 +27,13 @@ run with fp16 activations, and nothing is cast per step.
   (their stream peaks around 4k); enable it for the official base weights,
   whose stream peaks near 62k at 1024² and overflows at 2560².
 
+# Install
+
+```bash
+cd ComfyUI/custom_nodes
+git clone https://github.com/mkrgg/ComfyUI-MossFP16.git
+```
+
 ## Use
 
 Restart ComfyUI, add **MOSS Image Loader (FP16)** (category `MOSS`) and select
